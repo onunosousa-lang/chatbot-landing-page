@@ -26,14 +26,16 @@
         :root {
             --bg-main: #0B0F19;
             --bg-surface: #111827;
-            --bg-elevated: #161E2E;
-            --text-primary: #E5E7EB;
-            --text-secondary: #9CA3AF;
-            --text-muted: #6B7280;
-            --border-subtle: rgba(255,255,255,0.08);
-            --divider-subtle: rgba(255,255,255,0.06);
+            --bg-elevated: #1F2937;
+            --text-primary: #F9FAFB;
+            --text-secondary: #D1D5DB;
+            --text-muted: #9CA3AF;
+            --border-subtle: rgba(255,255,255,0.12);
+            --divider-subtle: rgba(255,255,255,0.08);
             --brand: #6366F1;
             --brand-hover: #4F46E5;
+            --whatsapp: #25D366;
+            --whatsapp-hover: #20BA5A;
             --focus-ring: 0 0 0 3px rgba(99,102,241,0.35);
             --shadow-button: 0 10px 30px rgba(0,0,0,0.35);
             --shadow-card: 0 10px 30px rgba(0,0,0,0.25);
@@ -99,6 +101,42 @@
         .nav-cta:focus {
             outline: none;
             box-shadow: var(--focus-ring);
+        }
+
+        .nav-actions {
+            display: flex;
+            gap: 12px;
+            align-items: center;
+        }
+
+        /* WhatsApp Floating Button */
+        .whatsapp-float {
+            position: fixed;
+            bottom: 24px;
+            right: 24px;
+            width: 60px;
+            height: 60px;
+            background: var(--whatsapp);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 12px rgba(37, 211, 102, 0.4);
+            z-index: 1000;
+            transition: transform 0.2s, box-shadow 0.2s;
+            text-decoration: none;
+        }
+
+        .whatsapp-float:hover {
+            background: var(--whatsapp-hover);
+            transform: scale(1.1);
+            box-shadow: 0 6px 16px rgba(37, 211, 102, 0.5);
+        }
+
+        .whatsapp-float svg {
+            width: 32px;
+            height: 32px;
+            fill: white;
         }
 
         /* Hero Section */
@@ -687,8 +725,10 @@
                 <span>💬</span>
                 <span>ChatMate</span>
             </a>
-            <a href="#demo" class="nav-cta lang-nl">Vraag een demo aan</a>
-            <a href="#demo" class="nav-cta lang-en">Request a demo</a>
+            <div class="nav-actions">
+                <a href="mailto:onunosousa@gmail.com" class="nav-cta lang-nl">Neem contact op</a>
+                <a href="mailto:onunosousa@gmail.com" class="nav-cta lang-en">Contact us</a>
+            </div>
         </div>
     </nav>
 
@@ -708,8 +748,8 @@
             </p>
 
             <div class="hero-cta-group">
-                <a href="#demo" class="btn-primary lang-nl">Vraag een demo aan</a>
-                <a href="#demo" class="btn-primary lang-en">Request a demo</a>
+                <a href="https://wa.me/31629841297?text=Hallo%2C%20ik%20wil%20graag%20meer%20informatie%20over%20ChatMate" class="btn-primary lang-nl">Vraag een gesprek aan</a>
+                <a href="https://wa.me/31629841297?text=Hello%2C%20I%20would%20like%20more%20information%20about%20ChatMate" class="btn-primary lang-en">Request a call</a>
                 <a href="#pricing" class="text-link lang-nl">Bekijk prijzen</a>
                 <a href="#pricing" class="text-link lang-en">See pricing</a>
             </div>
@@ -977,8 +1017,8 @@
                         <li class="lang-nl">Mobiel geoptimaliseerd</li>
                         <li class="lang-en">Mobile optimized</li>
                     </ul>
-                    <a href="#demo" class="pricing-cta lang-nl">Start Starter</a>
-                    <a href="#demo" class="pricing-cta lang-en">Start Starter</a>
+                    <a href="https://wa.me/31629841297?text=Hallo%2C%20ik%20wil%20graag%20starten%20met%20het%20Starter%20pakket" class="pricing-cta lang-nl">Start Starter</a>
+                    <a href="https://wa.me/31629841297?text=Hello%2C%20I%20would%20like%20to%20start%20with%20the%20Starter%20package" class="pricing-cta lang-en">Start Starter</a>
                 </div>
 
                 <div class="pricing-card featured">
@@ -1004,8 +1044,8 @@
                         <li class="lang-nl">Maandelijkse rapporten</li>
                         <li class="lang-en">Monthly reports</li>
                     </ul>
-                    <a href="#demo" class="pricing-cta lang-nl">Start Pro</a>
-                    <a href="#demo" class="pricing-cta lang-en">Start Pro</a>
+                    <a href="https://wa.me/31629841297?text=Hallo%2C%20ik%20wil%20graag%20starten%20met%20het%20Pro%20pakket" class="pricing-cta lang-nl">Start Pro</a>
+                    <a href="https://wa.me/31629841297?text=Hello%2C%20I%20would%20like%20to%20start%20with%20the%20Pro%20package" class="pricing-cta lang-en">Start Pro</a>
                 </div>
             </div>
         </div>
@@ -1017,8 +1057,8 @@
             <h2 class="lang-nl">Zie het op je website.</h2>
             <h2 class="lang-en">See it on your website.</h2>
 
-            <a href="mailto:info@chatmate.nl" class="btn-primary lang-nl">Vraag een demo aan</a>
-            <a href="mailto:info@chatmate.nl" class="btn-primary lang-en">Request a demo</a>
+            <a href="https://wa.me/31629841297?text=Hallo%2C%20ik%20wil%20graag%20een%20gesprek%20plannen%20over%20ChatMate" class="btn-primary lang-nl">Vraag een gesprek aan</a>
+            <a href="https://wa.me/31629841297?text=Hello%2C%20I%20would%20like%20to%20schedule%20a%20call%20about%20ChatMate" class="btn-primary lang-en">Request a call</a>
 
             <p class="final-cta-support lang-nl">Geen lange setup. We helpen je met installeren.</p>
             <p class="final-cta-support lang-en">No long setup. We help you install.</p>
@@ -1052,7 +1092,7 @@
                 <h4 class="lang-nl">Bedrijf</h4>
                 <h4 class="lang-en">Company</h4>
                 <ul>
-                    <li><a href="mailto:info@chatmate.nl">Contact</a></li>
+                    <li><a href="mailto:onunosousa@gmail.com">Contact</a></li>
                     <li><a href="#" class="lang-nl">Privacy</a></li>
                     <li><a href="#" class="lang-en">Privacy</a></li>
                     <li><a href="#" class="lang-nl">Voorwaarden</a></li>
@@ -1065,6 +1105,13 @@
             <p>&copy; 2025 ChatMate. <span class="lang-nl">Alle rechten voorbehouden.</span><span class="lang-en">All rights reserved.</span></p>
         </div>
     </footer>
+
+    <!-- WhatsApp Floating Button -->
+    <a href="https://wa.me/31629841297?text=Hallo%2C%20ik%20heb%20een%20vraag%20over%20ChatMate" class="whatsapp-float" aria-label="Chat on WhatsApp">
+        <svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
+            <path d="M16 0C7.164 0 0 7.164 0 16c0 2.826.736 5.584 2.136 8.016L.08 31.92l8.112-2.072A15.93 15.93 0 0016 32c8.836 0 16-7.164 16-16S24.836 0 16 0zm0 29.376c-2.384 0-4.72-.64-6.768-1.856l-.488-.288-5.032 1.288 1.336-4.92-.32-.504A13.31 13.31 0 012.624 16c0-7.36 5.992-13.376 13.376-13.376 7.36 0 13.376 6.016 13.376 13.376 0 7.384-6.016 13.376-13.376 13.376zm7.328-10.016c-.4-.2-2.384-1.176-2.752-1.312-.368-.128-.64-.2-.912.2-.272.4-1.056 1.312-1.296 1.584-.24.272-.48.304-.88.104-.4-.2-1.696-.624-3.232-2-.104-1.128-.52-2.008-.8-2.28-.28-.272-.296-.416-.048-.656.232-.224.52-.584.776-.88.256-.296.344-.504.52-.84.168-.336.08-.632-.048-.88-.128-.248-1.176-2.832-1.616-3.872-.424-1.008-.856-1.032-1.176-1.032h-1.008c-.336 0-.88.128-1.344.632-.464.504-1.76 1.72-1.76 4.192s1.8 4.864 2.048 5.2c.248.336 3.504 5.344 8.488 7.488 1.184.512 2.112.816 2.832 1.048 1.192.376 2.272.328 3.128.2.952-.144 2.936-1.2 3.344-2.368.416-1.168.416-2.168.288-2.368-.128-.2-.464-.32-.968-.528z" fill="currentColor"/>
+        </svg>
+    </a>
 
     <!-- ChatMate Widget -->
     <script
