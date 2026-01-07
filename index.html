@@ -24,21 +24,26 @@
         }
 
         :root {
-            --bg-main: #0B0F19;
-            --bg-surface: #111827;
-            --bg-elevated: #1F2937;
-            --text-primary: #F9FAFB;
-            --text-secondary: #D1D5DB;
-            --text-muted: #9CA3AF;
-            --border-subtle: rgba(255,255,255,0.12);
-            --divider-subtle: rgba(255,255,255,0.08);
-            --brand: #6366F1;
-            --brand-hover: #4F46E5;
+            --bg-main: #F8FAFC;
+            --bg-surface: #FFFFFF;
+            --bg-elevated: #F1F5F9;
+            --text-primary: #0F172A;
+            --text-secondary: #475569;
+            --text-muted: #64748B;
+            --border-subtle: rgba(15,23,42,0.08);
+            --divider-subtle: rgba(15,23,42,0.06);
+            --brand-start: #6366F1;
+            --brand-end: #8B5CF6;
+            --brand-hover-start: #4F46E5;
+            --brand-hover-end: #7C3AED;
             --whatsapp: #25D366;
             --whatsapp-hover: #20BA5A;
-            --focus-ring: 0 0 0 3px rgba(99,102,241,0.35);
-            --shadow-button: 0 10px 30px rgba(0,0,0,0.35);
-            --shadow-card: 0 10px 30px rgba(0,0,0,0.25);
+            --accent-gradient: linear-gradient(135deg, #6366F1 0%, #8B5CF6 50%, #EC4899 100%);
+            --hero-gradient: linear-gradient(135deg, #667EEA 0%, #764BA2 100%);
+            --focus-ring: 0 0 0 3px rgba(99,102,241,0.2);
+            --shadow-button: 0 10px 40px rgba(99,102,241,0.3);
+            --shadow-card: 0 4px 20px rgba(15,23,42,0.08);
+            --shadow-hover: 0 20px 60px rgba(99,102,241,0.4);
         }
 
         body {
@@ -52,13 +57,14 @@
 
         /* Navigation */
         nav {
-            background: var(--bg-main);
+            background: rgba(248, 250, 252, 0.8);
             border-bottom: 1px solid var(--border-subtle);
             padding: 1rem 0;
             position: sticky;
             top: 0;
             z-index: 100;
-            backdrop-filter: blur(10px);
+            backdrop-filter: blur(20px) saturate(180%);
+            box-shadow: 0 1px 3px rgba(15,23,42,0.05);
         }
 
         .nav-container {
@@ -81,21 +87,23 @@
         }
 
         .nav-cta {
-            background: var(--brand);
+            background: linear-gradient(135deg, var(--brand-start), var(--brand-end));
             color: white;
             padding: 10px 24px;
-            border-radius: 8px;
+            border-radius: 12px;
             font-size: 14px;
             font-weight: 600;
             text-decoration: none;
-            transition: background 0.2s, transform 0.2s;
+            transition: all 0.3s ease;
             border: none;
             cursor: pointer;
+            box-shadow: 0 4px 15px rgba(99,102,241,0.2);
         }
 
         .nav-cta:hover {
-            background: var(--brand-hover);
-            transform: translateY(-1px);
+            background: linear-gradient(135deg, var(--brand-hover-start), var(--brand-hover-end));
+            transform: translateY(-2px);
+            box-shadow: 0 6px 25px rgba(99,102,241,0.35);
         }
 
         .nav-cta:focus {
@@ -172,23 +180,46 @@
         }
 
         .btn-primary {
-            background: var(--brand);
+            background: linear-gradient(135deg, #667EEA 0%, #764BA2 100%);
             color: white;
-            padding: 16px 40px;
-            border-radius: 8px;
-            font-size: 16px;
+            padding: 18px 48px;
+            border-radius: 16px;
+            font-size: 17px;
             font-weight: 600;
             text-decoration: none;
             display: inline-block;
-            transition: background 0.2s, box-shadow 0.2s, transform 0.2s;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
             border: none;
             cursor: pointer;
             box-shadow: var(--shadow-button);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .btn-primary::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, #764BA2 0%, #667EEA 100%);
+            opacity: 0;
+            transition: opacity 0.4s;
+        }
+
+        .btn-primary:hover::before {
+            opacity: 1;
         }
 
         .btn-primary:hover {
-            background: var(--brand-hover);
-            transform: translateY(-2px);
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-hover);
+        }
+
+        .btn-primary span {
+            position: relative;
+            z-index: 1;
         }
 
         .btn-primary:focus {
@@ -218,11 +249,12 @@
 
         .hero-visual {
             margin-top: 64px;
-            background: var(--bg-surface);
+            background: linear-gradient(135deg, rgba(255,255,255,0.9) 0%, rgba(255,255,255,0.7) 100%);
             border: 1px solid var(--border-subtle);
-            border-radius: 20px;
+            border-radius: 24px;
             padding: 32px;
-            box-shadow: var(--shadow-card);
+            box-shadow: 0 20px 60px rgba(99,102,241,0.15);
+            backdrop-filter: blur(10px);
         }
 
         .chat-demo {
@@ -244,14 +276,15 @@
         .chat-bubble {
             background: var(--bg-elevated);
             padding: 12px 16px;
-            border-radius: 16px;
+            border-radius: 18px;
             max-width: 70%;
             font-size: 14px;
             line-height: 1.5;
+            box-shadow: 0 2px 8px rgba(15,23,42,0.06);
         }
 
         .chat-message.visitor .chat-bubble {
-            background: var(--brand);
+            background: linear-gradient(135deg, #667EEA 0%, #764BA2 100%);
             color: white;
         }
 
@@ -259,7 +292,7 @@
             width: 32px;
             height: 32px;
             border-radius: 50%;
-            background: var(--brand);
+            background: linear-gradient(135deg, #667EEA 0%, #764BA2 100%);
             display: flex;
             align-items: center;
             justify-content: center;
@@ -302,7 +335,7 @@
 
         /* Problem Section */
         .problem {
-            background: var(--bg-surface);
+            background: linear-gradient(135deg, #F8FAFC 0%, #F1F5F9 100%);
             border-top: 1px solid var(--border-subtle);
             border-bottom: 1px solid var(--border-subtle);
         }
@@ -356,16 +389,22 @@
         .step-card {
             background: var(--bg-surface);
             border: 1px solid var(--border-subtle);
-            border-radius: 16px;
+            border-radius: 20px;
             padding: 32px;
             box-shadow: var(--shadow-card);
+            transition: all 0.3s ease;
+        }
+
+        .step-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 40px rgba(99,102,241,0.15);
         }
 
         .step-icon {
-            width: 48px;
-            height: 48px;
-            background: rgba(99,102,241,0.1);
-            border-radius: 12px;
+            width: 56px;
+            height: 56px;
+            background: linear-gradient(135deg, rgba(102,126,234,0.1) 0%, rgba(139,92,246,0.1) 100%);
+            border-radius: 16px;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -373,9 +412,9 @@
         }
 
         .step-icon svg {
-            width: 24px;
-            height: 24px;
-            stroke: var(--brand);
+            width: 28px;
+            height: 28px;
+            stroke: url(#gradient);
         }
 
         .step-card h3 {
@@ -404,10 +443,18 @@
         }
 
         .feature-card {
-            background: var(--bg-elevated);
+            background: linear-gradient(135deg, rgba(255,255,255,0.9) 0%, rgba(241,245,249,0.6) 100%);
             border: 1px solid var(--border-subtle);
-            border-radius: 16px;
+            border-radius: 20px;
             padding: 32px;
+            transition: all 0.3s ease;
+            box-shadow: var(--shadow-card);
+        }
+
+        .feature-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 40px rgba(99,102,241,0.12);
+            border-color: rgba(99,102,241,0.2);
         }
 
         .feature-card h3 {
@@ -436,8 +483,15 @@
         .testimonial-card {
             background: var(--bg-surface);
             border: 1px solid var(--border-subtle);
-            border-radius: 16px;
+            border-radius: 20px;
             padding: 32px;
+            box-shadow: var(--shadow-card);
+            transition: all 0.3s ease;
+        }
+
+        .testimonial-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 40px rgba(99,102,241,0.15);
         }
 
         .testimonial-quote {
@@ -457,8 +511,8 @@
             width: 40px;
             height: 40px;
             border-radius: 50%;
-            background: rgba(99,102,241,0.2);
-            color: var(--brand);
+            background: linear-gradient(135deg, #667EEA 0%, #764BA2 100%);
+            color: white;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -490,18 +544,18 @@
 
         .logo-pill {
             display: inline-block;
-            background: var(--bg-surface);
-            border: 1px solid var(--border-subtle);
-            padding: 8px 20px;
+            background: linear-gradient(135deg, rgba(102,126,234,0.08) 0%, rgba(139,92,246,0.08) 100%);
+            border: 1px solid rgba(99,102,241,0.2);
+            padding: 10px 24px;
             border-radius: 24px;
             font-size: 14px;
-            color: var(--text-secondary);
-            font-weight: 500;
+            color: var(--text-primary);
+            font-weight: 600;
         }
 
         /* Pricing */
         .pricing {
-            background: var(--bg-surface);
+            background: linear-gradient(135deg, #F8FAFC 0%, #F1F5F9 100%);
             border-top: 1px solid var(--border-subtle);
             border-bottom: 1px solid var(--border-subtle);
         }
@@ -515,15 +569,36 @@
         }
 
         .pricing-card {
-            background: var(--bg-elevated);
+            background: var(--bg-surface);
             border: 1px solid var(--border-subtle);
-            border-radius: 16px;
+            border-radius: 24px;
             padding: 40px;
+            box-shadow: var(--shadow-card);
+            transition: all 0.3s ease;
+        }
+
+        .pricing-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 40px rgba(99,102,241,0.15);
         }
 
         .pricing-card.featured {
-            border-color: var(--brand);
-            border-width: 2px;
+            background: linear-gradient(135deg, rgba(255,255,255,1) 0%, rgba(248,250,252,1) 100%);
+            border: 2px solid transparent;
+            background-clip: padding-box;
+            position: relative;
+        }
+
+        .pricing-card.featured::before {
+            content: '';
+            position: absolute;
+            top: -2px;
+            left: -2px;
+            right: -2px;
+            bottom: -2px;
+            background: linear-gradient(135deg, #667EEA 0%, #764BA2 100%);
+            border-radius: 24px;
+            z-index: -1;
         }
 
         .pricing-card h3 {
@@ -569,23 +644,25 @@
 
         .pricing-cta {
             width: 100%;
-            background: var(--brand);
+            background: linear-gradient(135deg, #667EEA 0%, #764BA2 100%);
             color: white;
-            padding: 14px 32px;
-            border-radius: 8px;
+            padding: 16px 32px;
+            border-radius: 12px;
             font-size: 16px;
             font-weight: 600;
             text-decoration: none;
             display: inline-block;
             text-align: center;
-            transition: background 0.2s, transform 0.2s;
+            transition: all 0.3s ease;
             border: none;
             cursor: pointer;
+            box-shadow: 0 4px 15px rgba(102,126,234,0.3);
         }
 
         .pricing-cta:hover {
-            background: var(--brand-hover);
-            transform: translateY(-1px);
+            background: linear-gradient(135deg, #764BA2 0%, #667EEA 100%);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(102,126,234,0.4);
         }
 
         .pricing-cta:focus {
@@ -613,9 +690,26 @@
 
         /* Footer */
         footer {
-            background: var(--bg-surface);
+            background: linear-gradient(135deg, #0F172A 0%, #1E293B 100%);
             border-top: 1px solid var(--border-subtle);
             padding: 48px 20px 24px;
+        }
+
+        footer .footer-section h4 {
+            color: #F8FAFC;
+        }
+
+        footer .footer-section a,
+        footer .footer-section p {
+            color: #94A3B8;
+        }
+
+        footer .footer-section a:hover {
+            color: #E2E8F0;
+        }
+
+        footer .footer-bottom {
+            color: #64748B;
         }
 
         .footer-container {
@@ -631,7 +725,6 @@
             font-size: 14px;
             font-weight: 600;
             margin-bottom: 16px;
-            color: var(--text-primary);
         }
 
         .footer-section ul {
@@ -643,21 +736,15 @@
         }
 
         .footer-section a {
-            color: var(--text-muted);
             text-decoration: none;
             font-size: 14px;
             transition: color 0.2s;
         }
 
-        .footer-section a:hover {
-            color: var(--text-primary);
-        }
-
         .footer-bottom {
-            border-top: 1px solid var(--divider-subtle);
+            border-top: 1px solid rgba(255,255,255,0.1);
             padding-top: 24px;
             text-align: center;
-            color: var(--text-muted);
             font-size: 14px;
         }
 
@@ -718,6 +805,16 @@
     </style>
 </head>
 <body data-lang="nl">
+    <!-- SVG Definitions -->
+    <svg width="0" height="0" style="position: absolute;">
+        <defs>
+            <linearGradient id="gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" style="stop-color:#667EEA;stop-opacity:1" />
+                <stop offset="100%" style="stop-color:#764BA2;stop-opacity:1" />
+            </linearGradient>
+        </defs>
+    </svg>
+
     <!-- Navigation -->
     <nav>
         <div class="nav-container">
@@ -748,8 +845,8 @@
             </p>
 
             <div class="hero-cta-group">
-                <a href="https://wa.me/31629841297?text=Hallo%2C%20ik%20wil%20graag%20meer%20informatie%20over%20ChatMate" class="btn-primary lang-nl">Vraag een gesprek aan</a>
-                <a href="https://wa.me/31629841297?text=Hello%2C%20I%20would%20like%20more%20information%20about%20ChatMate" class="btn-primary lang-en">Request a call</a>
+                <a href="https://wa.me/31629841297?text=Hallo%2C%20ik%20wil%20graag%20meer%20informatie%20over%20ChatMate" class="btn-primary lang-nl"><span>Vraag een gesprek aan</span></a>
+                <a href="https://wa.me/31629841297?text=Hello%2C%20I%20would%20like%20more%20information%20about%20ChatMate" class="btn-primary lang-en"><span>Request a call</span></a>
                 <a href="#pricing" class="text-link lang-nl">Bekijk prijzen</a>
                 <a href="#pricing" class="text-link lang-en">See pricing</a>
             </div>
@@ -1057,8 +1154,8 @@
             <h2 class="lang-nl">Zie het op je website.</h2>
             <h2 class="lang-en">See it on your website.</h2>
 
-            <a href="https://wa.me/31629841297?text=Hallo%2C%20ik%20wil%20graag%20een%20gesprek%20plannen%20over%20ChatMate" class="btn-primary lang-nl">Vraag een gesprek aan</a>
-            <a href="https://wa.me/31629841297?text=Hello%2C%20I%20would%20like%20to%20schedule%20a%20call%20about%20ChatMate" class="btn-primary lang-en">Request a call</a>
+            <a href="https://wa.me/31629841297?text=Hallo%2C%20ik%20wil%20graag%20een%20gesprek%20plannen%20over%20ChatMate" class="btn-primary lang-nl"><span>Vraag een gesprek aan</span></a>
+            <a href="https://wa.me/31629841297?text=Hello%2C%20I%20would%20like%20to%20schedule%20a%20call%20about%20ChatMate" class="btn-primary lang-en"><span>Request a call</span></a>
 
             <p class="final-cta-support lang-nl">Geen lange setup. We helpen je met installeren.</p>
             <p class="final-cta-support lang-en">No long setup. We help you install.</p>
@@ -1070,10 +1167,10 @@
         <div class="footer-container">
             <div class="footer-section">
                 <h4>ChatMate</h4>
-                <p class="lang-nl" style="color: var(--text-muted); font-size: 14px; margin-top: 8px;">
+                <p class="lang-nl" style="color: #94A3B8; font-size: 14px; margin-top: 8px;">
                     Website-assistent voor meer leads
                 </p>
-                <p class="lang-en" style="color: var(--text-muted); font-size: 14px; margin-top: 8px;">
+                <p class="lang-en" style="color: #94A3B8; font-size: 14px; margin-top: 8px;">
                     Website assistant for more leads
                 </p>
             </div>
