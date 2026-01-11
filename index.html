@@ -3,12 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="ChatMate - Capture more enquiries from your website automatically. A website assistant that answers questions and collects contact details.">
-    <meta name="keywords" content="AI chatbot, website chat, leads, chatbot Nederland, customer service, automation">
-    <title>ChatMate - Capture More Enquiries Automatically</title>
+    <meta name="description" content="ChatMate - AI-powered chatbot that converts visitors into leads while you sleep. Plus expert AI consulting & automation services from €99/month.">
+    <meta name="keywords" content="AI chatbot, lead generation, AI consulting, automation, future-proofing, chatbot Nederland, customer service">
+    <title>ChatMate - AI Chatbot + Consulting | Lead Generation & Future-Proofing</title>
 
-    <meta property="og:title" content="ChatMate - Capture More Enquiries from Your Website">
-    <meta property="og:description" content="Turn more website visitors into real enquiries, 24/7. Installs in ~15 minutes.">
+    <meta property="og:title" content="ChatMate - AI Chatbot + Automation Consulting">
+    <meta property="og:description" content="Convert visitors 24/7 with intelligent AI + ongoing consulting in automation & AI future-proofing. From €99/month.">
     <meta property="og:type" content="website">
 
     <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>💬</text></svg>">
@@ -24,21 +24,27 @@
         }
 
         :root {
-            --bg-main: #0B0F19;
-            --bg-surface: #111827;
-            --bg-elevated: #1F2937;
-            --text-primary: #F9FAFB;
-            --text-secondary: #D1D5DB;
-            --text-muted: #9CA3AF;
-            --border-subtle: rgba(255,255,255,0.12);
-            --divider-subtle: rgba(255,255,255,0.08);
-            --brand: #6366F1;
-            --brand-hover: #4F46E5;
+            --bg-main: #050711;
+            --bg-surface: #0a0e1a;
+            --bg-elevated: #111827;
+            --bg-accent: #1a1f35;
+            --text-primary: #FFFFFF;
+            --text-secondary: #E4E4E7;
+            --text-muted: #A1A1AA;
+            --border-subtle: rgba(255,255,255,0.08);
+            --divider-subtle: rgba(255,255,255,0.05);
+            --gradient-primary: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            --gradient-secondary: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            --gradient-accent: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+            --gradient-success: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%);
+            --brand: #667eea;
+            --brand-hover: #764ba2;
             --whatsapp: #25D366;
             --whatsapp-hover: #20BA5A;
-            --focus-ring: 0 0 0 3px rgba(99,102,241,0.35);
-            --shadow-button: 0 10px 30px rgba(0,0,0,0.35);
-            --shadow-card: 0 10px 30px rgba(0,0,0,0.25);
+            --focus-ring: 0 0 0 3px rgba(102,126,234,0.4);
+            --shadow-button: 0 10px 40px rgba(102,126,234,0.3);
+            --shadow-card: 0 10px 40px rgba(0,0,0,0.4);
+            --shadow-glow: 0 0 60px rgba(102,126,234,0.15);
         }
 
         body {
@@ -81,21 +87,44 @@
         }
 
         .nav-cta {
-            background: var(--brand);
+            background: var(--gradient-primary);
             color: white;
             padding: 10px 24px;
             border-radius: 8px;
             font-size: 14px;
             font-weight: 600;
             text-decoration: none;
-            transition: background 0.2s, transform 0.2s;
+            transition: all 0.3s ease;
             border: none;
             cursor: pointer;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .nav-cta::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, #764ba2 0%, #667eea 100%);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .nav-cta:hover::before {
+            opacity: 1;
         }
 
         .nav-cta:hover {
-            background: var(--brand-hover);
-            transform: translateY(-1px);
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(102,126,234,0.4);
+        }
+
+        .nav-cta span {
+            position: relative;
+            z-index: 1;
         }
 
         .nav-cta:focus {
@@ -144,19 +173,39 @@
             padding: 96px 20px;
             max-width: 1200px;
             margin: 0 auto;
+            position: relative;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -100px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, rgba(102,126,234,0.2) 0%, transparent 70%);
+            pointer-events: none;
+            z-index: 0;
         }
 
         .hero-content {
-            max-width: 680px;
+            max-width: 720px;
             margin: 0 auto;
+            position: relative;
+            z-index: 1;
         }
 
         .hero h1 {
-            font-size: 52px;
-            font-weight: 700;
+            font-size: 56px;
+            font-weight: 800;
             line-height: 1.1;
-            margin-bottom: 20px;
-            letter-spacing: -0.02em;
+            margin-bottom: 24px;
+            letter-spacing: -0.03em;
+            background: linear-gradient(135deg, #FFFFFF 0%, #E4E4E7 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
         }
 
         .hero-subheadline {
@@ -172,28 +221,52 @@
         }
 
         .btn-primary {
-            background: var(--brand);
+            background: var(--gradient-primary);
             color: white;
-            padding: 16px 40px;
-            border-radius: 8px;
-            font-size: 16px;
-            font-weight: 600;
+            padding: 18px 48px;
+            border-radius: 12px;
+            font-size: 17px;
+            font-weight: 700;
             text-decoration: none;
             display: inline-block;
-            transition: background 0.2s, box-shadow 0.2s, transform 0.2s;
+            transition: all 0.3s ease;
             border: none;
             cursor: pointer;
             box-shadow: var(--shadow-button);
+            position: relative;
+            overflow: hidden;
+            letter-spacing: 0.3px;
+        }
+
+        .btn-primary::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, #764ba2 0%, #667eea 100%);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .btn-primary:hover::before {
+            opacity: 1;
         }
 
         .btn-primary:hover {
-            background: var(--brand-hover);
-            transform: translateY(-2px);
+            transform: translateY(-3px);
+            box-shadow: 0 15px 50px rgba(102,126,234,0.5);
         }
 
         .btn-primary:focus {
             outline: none;
             box-shadow: var(--focus-ring), var(--shadow-button);
+        }
+
+        .btn-primary span {
+            position: relative;
+            z-index: 1;
         }
 
         .text-link {
@@ -220,9 +293,22 @@
             margin-top: 64px;
             background: var(--bg-surface);
             border: 1px solid var(--border-subtle);
-            border-radius: 20px;
-            padding: 32px;
+            border-radius: 24px;
+            padding: 40px;
             box-shadow: var(--shadow-card);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-visual::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 200px;
+            background: radial-gradient(ellipse at top, rgba(102,126,234,0.1) 0%, transparent 60%);
+            pointer-events: none;
         }
 
         .chat-demo {
@@ -243,15 +329,17 @@
 
         .chat-bubble {
             background: var(--bg-elevated);
-            padding: 12px 16px;
-            border-radius: 16px;
+            padding: 14px 18px;
+            border-radius: 18px;
             max-width: 70%;
-            font-size: 14px;
-            line-height: 1.5;
+            font-size: 15px;
+            line-height: 1.6;
+            position: relative;
+            z-index: 1;
         }
 
         .chat-message.visitor .chat-bubble {
-            background: var(--brand);
+            background: var(--gradient-primary);
             color: white;
         }
 
@@ -302,14 +390,18 @@
 
         /* Problem Section */
         .problem {
-            background: var(--bg-surface);
+            background: linear-gradient(180deg, var(--bg-main) 0%, var(--bg-surface) 50%, var(--bg-main) 100%);
             border-top: 1px solid var(--border-subtle);
             border-bottom: 1px solid var(--border-subtle);
         }
 
         .problem-content {
-            max-width: 720px;
+            max-width: 780px;
             margin: 0 auto;
+        }
+
+        .problem h2 {
+            margin-bottom: 40px;
         }
 
         .problem ul {
@@ -318,28 +410,32 @@
         }
 
         .problem li {
-            padding: 16px 0;
-            font-size: 18px;
+            padding: 20px 0;
+            font-size: 19px;
             color: var(--text-secondary);
             display: flex;
             align-items: center;
-            gap: 12px;
+            gap: 16px;
         }
 
         .problem li::before {
             content: "×";
             color: #EF4444;
-            font-size: 24px;
+            font-size: 28px;
             font-weight: 700;
+            flex-shrink: 0;
         }
 
         .problem-bridge {
-            margin-top: 40px;
-            padding-top: 40px;
-            border-top: 1px solid var(--divider-subtle);
-            font-size: 18px;
+            margin-top: 48px;
+            padding: 32px;
+            background: var(--bg-elevated);
+            border: 1px solid rgba(102,126,234,0.2);
+            border-radius: 16px;
+            font-size: 19px;
             color: var(--text-primary);
-            font-weight: 500;
+            font-weight: 600;
+            text-align: center;
         }
 
         /* How It Works */
@@ -356,9 +452,34 @@
         .step-card {
             background: var(--bg-surface);
             border: 1px solid var(--border-subtle);
-            border-radius: 16px;
-            padding: 32px;
+            border-radius: 20px;
+            padding: 36px;
             box-shadow: var(--shadow-card);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .step-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: var(--gradient-primary);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .step-card:hover {
+            transform: translateY(-5px);
+            border-color: rgba(102,126,234,0.3);
+            box-shadow: var(--shadow-glow);
+        }
+
+        .step-card:hover::before {
+            opacity: 1;
         }
 
         .step-icon {
@@ -390,6 +511,104 @@
             line-height: 1.6;
         }
 
+        /* AI Consulting Section */
+        .ai-consulting {
+            background: linear-gradient(180deg, var(--bg-surface) 0%, var(--bg-main) 100%);
+            border-top: 1px solid var(--border-subtle);
+            position: relative;
+        }
+
+        .ai-consulting::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 800px;
+            height: 400px;
+            background: radial-gradient(circle, rgba(102,126,234,0.15) 0%, transparent 70%);
+            pointer-events: none;
+        }
+
+        .consulting-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 32px;
+            margin-bottom: 48px;
+        }
+
+        .consulting-card {
+            background: var(--bg-elevated);
+            border: 1px solid var(--border-subtle);
+            border-radius: 20px;
+            padding: 40px;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .consulting-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: var(--gradient-primary);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .consulting-card:hover {
+            transform: translateY(-5px);
+            border-color: rgba(102,126,234,0.3);
+            box-shadow: var(--shadow-glow);
+        }
+
+        .consulting-card:hover::before {
+            opacity: 1;
+        }
+
+        .consulting-icon {
+            font-size: 48px;
+            margin-bottom: 20px;
+            display: inline-block;
+        }
+
+        .consulting-card h3 {
+            font-size: 22px;
+            font-weight: 700;
+            margin-bottom: 12px;
+            color: var(--text-primary);
+        }
+
+        .consulting-card p {
+            color: var(--text-secondary);
+            font-size: 15px;
+            line-height: 1.7;
+        }
+
+        .consulting-value {
+            background: var(--bg-accent);
+            border: 1px solid rgba(102,126,234,0.2);
+            border-radius: 16px;
+            padding: 32px;
+            text-align: center;
+        }
+
+        .consulting-value p {
+            font-size: 17px;
+            color: var(--text-secondary);
+            line-height: 1.7;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .consulting-value strong {
+            color: var(--text-primary);
+            font-weight: 700;
+        }
+
         /* Features */
         .features {
             background: var(--bg-surface);
@@ -406,20 +625,45 @@
         .feature-card {
             background: var(--bg-elevated);
             border: 1px solid var(--border-subtle);
-            border-radius: 16px;
+            border-radius: 20px;
             padding: 32px;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .feature-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: var(--gradient-accent);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-5px);
+            border-color: rgba(79,172,254,0.3);
+            box-shadow: 0 0 40px rgba(79,172,254,0.15);
+        }
+
+        .feature-card:hover::before {
+            opacity: 1;
         }
 
         .feature-card h3 {
             font-size: 18px;
-            font-weight: 600;
-            margin-bottom: 8px;
+            font-weight: 700;
+            margin-bottom: 12px;
         }
 
         .feature-card p {
             color: var(--text-secondary);
             font-size: 15px;
-            line-height: 1.6;
+            line-height: 1.7;
         }
 
         /* Social Proof */
@@ -517,19 +761,49 @@
         .pricing-card {
             background: var(--bg-elevated);
             border: 1px solid var(--border-subtle);
-            border-radius: 16px;
+            border-radius: 20px;
             padding: 40px;
+            position: relative;
+            transition: all 0.3s ease;
+        }
+
+        .pricing-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-glow);
         }
 
         .pricing-card.featured {
-            border-color: var(--brand);
-            border-width: 2px;
+            border: 2px solid transparent;
+            background: linear-gradient(var(--bg-elevated), var(--bg-elevated)) padding-box,
+                        var(--gradient-primary) border-box;
+        }
+
+        .pricing-badge {
+            background: var(--bg-accent);
+            color: var(--text-secondary);
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 13px;
+            font-weight: 600;
+            display: inline-block;
+            margin-bottom: 16px;
+        }
+
+        .pricing-badge.featured-badge {
+            background: var(--gradient-primary);
+            color: white;
         }
 
         .pricing-card h3 {
-            font-size: 20px;
-            font-weight: 600;
+            font-size: 24px;
+            font-weight: 700;
             margin-bottom: 8px;
+        }
+
+        .pricing-subtitle {
+            color: var(--text-muted);
+            font-size: 14px;
+            margin-bottom: 20px;
         }
 
         .pricing-card .price {
@@ -569,23 +843,47 @@
 
         .pricing-cta {
             width: 100%;
-            background: var(--brand);
+            background: var(--gradient-primary);
             color: white;
-            padding: 14px 32px;
-            border-radius: 8px;
+            padding: 16px 32px;
+            border-radius: 12px;
             font-size: 16px;
-            font-weight: 600;
+            font-weight: 700;
             text-decoration: none;
             display: inline-block;
             text-align: center;
-            transition: background 0.2s, transform 0.2s;
+            transition: all 0.3s ease;
             border: none;
             cursor: pointer;
+            position: relative;
+            overflow: hidden;
+            margin-top: 8px;
+        }
+
+        .pricing-cta::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, #764ba2 0%, #667eea 100%);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .pricing-cta:hover::before {
+            opacity: 1;
         }
 
         .pricing-cta:hover {
-            background: var(--brand-hover);
-            transform: translateY(-1px);
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(102,126,234,0.4);
+        }
+
+        .pricing-cta span {
+            position: relative;
+            z-index: 1;
         }
 
         .pricing-cta:focus {
@@ -593,22 +891,71 @@
             box-shadow: var(--focus-ring);
         }
 
-        /* Final CTA */
-        .final-cta {
-            background: var(--bg-main);
+        .pricing-note {
+            background: var(--bg-accent);
+            border: 1px solid var(--border-subtle);
+            border-radius: 16px;
+            padding: 24px;
+            margin-top: 48px;
             text-align: center;
         }
 
-        .final-cta h2 {
-            font-size: 36px;
+        .pricing-note p {
+            font-size: 16px;
+            color: var(--text-secondary);
+            line-height: 1.7;
+        }
+
+        .pricing-note strong {
+            color: var(--text-primary);
             font-weight: 700;
+        }
+
+        /* Final CTA */
+        .final-cta {
+            background: linear-gradient(180deg, var(--bg-main) 0%, var(--bg-surface) 100%);
+            text-align: center;
+            position: relative;
+        }
+
+        .final-cta::before {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 800px;
+            height: 400px;
+            background: radial-gradient(circle, rgba(102,126,234,0.12) 0%, transparent 70%);
+            pointer-events: none;
+        }
+
+        .final-cta .section-container {
+            position: relative;
+            z-index: 1;
+        }
+
+        .final-cta h2 {
+            font-size: 40px;
+            font-weight: 800;
+            margin-bottom: 20px;
+            line-height: 1.2;
+        }
+
+        .final-cta-subtitle {
+            font-size: 18px;
+            color: var(--text-secondary);
             margin-bottom: 32px;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+            line-height: 1.7;
         }
 
         .final-cta-support {
-            font-size: 14px;
+            font-size: 15px;
             color: var(--text-muted);
-            margin-top: 16px;
+            margin-top: 20px;
         }
 
         /* Footer */
@@ -726,8 +1073,8 @@
                 <span>ChatMate</span>
             </a>
             <div class="nav-actions">
-                <a href="mailto:onunosousa@gmail.com" class="nav-cta lang-nl">Neem contact op</a>
-                <a href="mailto:onunosousa@gmail.com" class="nav-cta lang-en">Contact us</a>
+                <a href="mailto:onunosousa@gmail.com" class="nav-cta lang-nl"><span>Neem contact op</span></a>
+                <a href="mailto:onunosousa@gmail.com" class="nav-cta lang-en"><span>Contact us</span></a>
             </div>
         </div>
     </nav>
@@ -735,30 +1082,30 @@
     <!-- Hero Section -->
     <section class="hero">
         <div class="hero-content">
-            <h1 class="lang-nl">Vang meer aanvragen van je website — automatisch.</h1>
-            <h1 class="lang-en">Capture more enquiries from your website — automatically.</h1>
+            <h1 class="lang-nl">Intelligente AI die leads genereert terwijl je slaapt.</h1>
+            <h1 class="lang-en">Intelligent AI that generates leads while you sleep.</h1>
 
             <p class="hero-subheadline lang-nl">
-                Een website-assistent die vragen beantwoordt en contactgegevens verzamelt,
-                en leads naar je inbox/CRM stuurt.
+                Een AI-chatbot die bezoekers 24/7 omzet in gekwalificeerde leads. Plus lopend advies
+                in <strong>automation</strong> & <strong>AI future-proofing</strong>. Allemaal voor één prijs.
             </p>
             <p class="hero-subheadline lang-en">
-                A website assistant that answers questions and collects contact details,
-                then sends leads to your inbox/CRM.
+                An AI chatbot that converts visitors into qualified leads 24/7. Plus ongoing consulting
+                in <strong>automation</strong> & <strong>AI future-proofing</strong>. All for one price.
             </p>
 
             <div class="hero-cta-group">
-                <a href="https://wa.me/31629841297?text=Hallo%2C%20ik%20wil%20graag%20meer%20informatie%20over%20ChatMate" class="btn-primary lang-nl">Vraag een gesprek aan</a>
-                <a href="https://wa.me/31629841297?text=Hello%2C%20I%20would%20like%20more%20information%20about%20ChatMate" class="btn-primary lang-en">Request a call</a>
-                <a href="#pricing" class="text-link lang-nl">Bekijk prijzen</a>
-                <a href="#pricing" class="text-link lang-en">See pricing</a>
+                <a href="https://wa.me/31629841297?text=Hallo%2C%20ik%20wil%20graag%20meer%20informatie%20over%20ChatMate" class="btn-primary lang-nl"><span>Start vandaag</span></a>
+                <a href="https://wa.me/31629841297?text=Hello%2C%20I%20would%20like%20more%20information%20about%20ChatMate" class="btn-primary lang-en"><span>Start today</span></a>
+                <a href="#pricing" class="text-link lang-nl">Vanaf €99/maand →</a>
+                <a href="#pricing" class="text-link lang-en">From €99/month →</a>
             </div>
 
             <p class="micro-trust lang-nl">
-                Installatie in ~15 minuten • Werkt op elke website • NL/EN ondersteund
+                ✓ Continuous support • ✓ Monthly updates • ✓ AI consulting included
             </p>
             <p class="micro-trust lang-en">
-                Installs in ~15 minutes • Works on any website • NL/EN supported
+                ✓ Continuous support • ✓ Monthly updates • ✓ AI consulting included
             </p>
         </div>
 
@@ -859,55 +1206,135 @@
         </div>
     </section>
 
+    <!-- AI Consulting Section -->
+    <section class="ai-consulting">
+        <div class="section-container">
+            <div class="section-header">
+                <h2 class="lang-nl">Plus: Continu AI & Automation Advies</h2>
+                <h2 class="lang-en">Plus: Continuous AI & Automation Consulting</h2>
+                <p class="lang-nl">Niet alleen een chatbot. Je krijgt ook toegang tot onze expertise.</p>
+                <p class="lang-en">Not just a chatbot. You also get access to our expertise.</p>
+            </div>
+
+            <div class="consulting-grid">
+                <div class="consulting-card">
+                    <div class="consulting-icon">🤖</div>
+                    <h3 class="lang-nl">AI Future-Proofing</h3>
+                    <h3 class="lang-en">AI Future-Proofing</h3>
+                    <p class="lang-nl">We houden je bedrijf up-to-date met de nieuwste AI-ontwikkelingen en helpen je kansen te identificeren voordat je concurrentie het doet.</p>
+                    <p class="lang-en">We keep your business up-to-date with the latest AI developments and help you identify opportunities before your competition does.</p>
+                </div>
+
+                <div class="consulting-card">
+                    <div class="consulting-icon">⚙️</div>
+                    <h3 class="lang-nl">Process Automation</h3>
+                    <h3 class="lang-en">Process Automation</h3>
+                    <p class="lang-nl">Maandelijks analyseren we je workflows en identificeren repetitieve taken die geautomatiseerd kunnen worden om tijd en kosten te besparen.</p>
+                    <p class="lang-en">Monthly we analyze your workflows and identify repetitive tasks that can be automated to save time and costs.</p>
+                </div>
+
+                <div class="consulting-card">
+                    <div class="consulting-icon">📈</div>
+                    <h3 class="lang-nl">Strategy Sessions</h3>
+                    <h3 class="lang-en">Strategy Sessions</h3>
+                    <p class="lang-nl">Regelmatige gesprekken over hoe AI en automation je business kunnen transformeren. Van quick wins tot langetermijnstrategie.</p>
+                    <p class="lang-en">Regular discussions about how AI and automation can transform your business. From quick wins to long-term strategy.</p>
+                </div>
+
+                <div class="consulting-card">
+                    <div class="consulting-icon">🔄</div>
+                    <h3 class="lang-nl">Continuous Updates</h3>
+                    <h3 class="lang-en">Continuous Updates</h3>
+                    <p class="lang-nl">Maandelijkse verbeteringen aan je chatbot + nieuwe features. Je systeem groeit mee met je business en de nieuwste AI-capabilities.</p>
+                    <p class="lang-en">Monthly improvements to your chatbot + new features. Your system grows with your business and the latest AI capabilities.</p>
+                </div>
+            </div>
+
+            <div class="consulting-value">
+                <p class="lang-nl">
+                    <strong>Dit alles inbegrepen bij elk pakket.</strong> Geen extra kosten voor advies of updates.
+                    Je betaalt één bedrag en krijgt continu ondersteuning om voor te blijven in de AI-race.
+                </p>
+                <p class="lang-en">
+                    <strong>All included with every package.</strong> No extra costs for consulting or updates.
+                    You pay one price and get continuous support to stay ahead in the AI race.
+                </p>
+            </div>
+        </div>
+    </section>
+
     <!-- Features -->
     <section class="features">
         <div class="section-container">
             <div class="section-header">
-                <h2 class="lang-nl">Functies</h2>
-                <h2 class="lang-en">Features</h2>
+                <h2 class="lang-nl">Wat de AI-bot voor je doet</h2>
+                <h2 class="lang-en">What the AI bot does for you</h2>
+                <p class="lang-nl">Meer dan alleen chatten. Een volledige lead-generatie machine.</p>
+                <p class="lang-en">More than just chatting. A complete lead generation machine.</p>
             </div>
 
             <div class="features-grid">
                 <div class="feature-card">
-                    <h3 class="lang-nl">Menselijke gesprekken</h3>
-                    <h3 class="lang-en">Human-like conversations</h3>
-                    <p class="lang-nl">Context-bewuste antwoorden die natuurlijk aanvoelen, niet robotachtig.</p>
-                    <p class="lang-en">Context-aware responses that feel natural, not robotic.</p>
+                    <h3 class="lang-nl">🎯 Kwalificeert leads automatisch</h3>
+                    <h3 class="lang-en">🎯 Qualifies leads automatically</h3>
+                    <p class="lang-nl">Stelt slimme vragen om serieuze prospects te identificeren en hun behoeften te begrijpen voordat ze bij jou terechtkomen.</p>
+                    <p class="lang-en">Asks intelligent questions to identify serious prospects and understand their needs before they reach you.</p>
                 </div>
 
                 <div class="feature-card">
-                    <h3 class="lang-nl">Lead capture (email/telefoon)</h3>
-                    <h3 class="lang-en">Lead capture (email/phone)</h3>
-                    <p class="lang-nl">Verzamelt contactgegevens op het juiste moment in het gesprek.</p>
-                    <p class="lang-en">Collects contact details at the right moment in the conversation.</p>
+                    <h3 class="lang-nl">💬 Beantwoordt complexe vragen</h3>
+                    <h3 class="lang-en">💬 Answers complex questions</h3>
+                    <p class="lang-nl">Legt je diensten uit, deelt prijsinformatie, en beantwoordt veelgestelde vragen — context-bewust en natuurlijk.</p>
+                    <p class="lang-en">Explains your services, shares pricing info, and answers FAQs — context-aware and naturally.</p>
                 </div>
 
                 <div class="feature-card">
-                    <h3 class="lang-nl">Werkt met Make/Zapier/CRM</h3>
-                    <h3 class="lang-en">Works with Make/Zapier/CRM</h3>
-                    <p class="lang-nl">Integreer met je bestaande tools via standaard koppelingen.</p>
-                    <p class="lang-en">Integrate with your existing tools via standard connections.</p>
+                    <h3 class="lang-nl">📧 Verzamelt contactgegevens subtiel</h3>
+                    <h3 class="lang-en">📧 Collects contact info subtly</h3>
+                    <p class="lang-nl">Vraagt op het perfecte moment om email en telefoonnummer. Niet opdringerig, maar effectief.</p>
+                    <p class="lang-en">Asks for email and phone at the perfect moment. Not pushy, but effective.</p>
                 </div>
 
                 <div class="feature-card">
-                    <h3 class="lang-nl">Meertalig</h3>
-                    <h3 class="lang-en">Multi-language</h3>
-                    <p class="lang-nl">Ondersteunt Nederlands en Engels, detecteert automatisch de taal.</p>
-                    <p class="lang-en">Supports Dutch and English, automatically detects language.</p>
+                    <h3 class="lang-nl">⚡ Stuurt leads direct naar je CRM</h3>
+                    <h3 class="lang-en">⚡ Sends leads directly to your CRM</h3>
+                    <p class="lang-nl">Integreert met Make, Zapier, en populaire CRM's. Leads komen binnen met volledige gesprekscontext.</p>
+                    <p class="lang-en">Integrates with Make, Zapier, and popular CRMs. Leads arrive with full conversation context.</p>
                 </div>
 
                 <div class="feature-card">
-                    <h3 class="lang-nl">Spam-bescherming & dedupe</h3>
-                    <h3 class="lang-en">Spam protection & dedupe</h3>
-                    <p class="lang-nl">Filtert spam en dubbele aanvragen zodat je alleen echte leads ontvangt.</p>
-                    <p class="lang-en">Filters spam and duplicate requests so you only receive real leads.</p>
+                    <h3 class="lang-nl">🌍 Werkt in meerdere talen</h3>
+                    <h3 class="lang-en">🌍 Works in multiple languages</h3>
+                    <p class="lang-nl">Detecteert automatisch de taal en past zich aan. Nederlands, Engels, of elke gewenste taal.</p>
+                    <p class="lang-en">Automatically detects language and adapts. Dutch, English, or any desired language.</p>
                 </div>
 
                 <div class="feature-card">
-                    <h3 class="lang-nl">Eenvoudige installatie (één script)</h3>
-                    <h3 class="lang-en">Simple install (one script)</h3>
-                    <p class="lang-nl">Voeg één regel code toe aan je website, of wij doen het voor je.</p>
-                    <p class="lang-en">Add one line of code to your website, or we do it for you.</p>
+                    <h3 class="lang-nl">🛡️ Beschermt tegen spam</h3>
+                    <h3 class="lang-en">🛡️ Protects against spam</h3>
+                    <p class="lang-nl">Ingebouwde spam-filtering en deduplicatie. Alleen echte, gekwalificeerde leads komen door.</p>
+                    <p class="lang-en">Built-in spam filtering and deduplication. Only real, qualified leads get through.</p>
+                </div>
+
+                <div class="feature-card">
+                    <h3 class="lang-nl">📅 Plant afspraken automatisch</h3>
+                    <h3 class="lang-en">📅 Books appointments automatically</h3>
+                    <p class="lang-nl">Kan direct afspraken plannen via integratie met je agenda. Leads komen binnen met voorkeurstijden.</p>
+                    <p class="lang-en">Can book appointments directly via calendar integration. Leads arrive with preferred times.</p>
+                </div>
+
+                <div class="feature-card">
+                    <h3 class="lang-nl">📊 Leert van elk gesprek</h3>
+                    <h3 class="lang-en">📊 Learns from every conversation</h3>
+                    <p class="lang-nl">Wordt slimmer met gebruik. Maandelijkse updates verbeteren de prestaties voortdurend.</p>
+                    <p class="lang-en">Gets smarter with use. Monthly updates continuously improve performance.</p>
+                </div>
+
+                <div class="feature-card">
+                    <h3 class="lang-nl">🔔 Stuurt real-time notificaties</h3>
+                    <h3 class="lang-en">🔔 Sends real-time notifications</h3>
+                    <p class="lang-nl">Ontvang direct WhatsApp of email alerts wanneer een hete lead binnenkomt. Mis nooit een kans.</p>
+                    <p class="lang-en">Receive instant WhatsApp or email alerts when a hot lead comes in. Never miss an opportunity.</p>
                 </div>
             </div>
         </div>
@@ -987,66 +1414,106 @@
     <section id="pricing" class="pricing">
         <div class="section-container">
             <div class="section-header">
-                <h2 class="lang-nl">Prijzen</h2>
-                <h2 class="lang-en">Pricing</h2>
-                <p class="lang-nl">Simpel en transparant. Stop wanneer je wilt.</p>
-                <p class="lang-en">Simple and transparent. Cancel anytime.</p>
+                <h2 class="lang-nl">Eén prijs. Alles inbegrepen.</h2>
+                <h2 class="lang-en">One price. Everything included.</h2>
+                <p class="lang-nl">AI chatbot + continue ondersteuning + maandelijkse updates + consulting. Vanaf €99/maand.</p>
+                <p class="lang-en">AI chatbot + continuous support + monthly updates + consulting. From €99/month.</p>
             </div>
 
             <div class="pricing-grid">
                 <div class="pricing-card">
+                    <div class="pricing-badge">
+                        <span class="lang-nl">Perfect om te starten</span>
+                        <span class="lang-en">Perfect to start</span>
+                    </div>
                     <h3>Starter</h3>
                     <div class="price">
                         €99
                         <span class="lang-nl">/maand</span>
                         <span class="lang-en">/month</span>
                     </div>
+                    <p class="pricing-subtitle lang-nl">Voor bedrijven die lead generation willen automatiseren</p>
+                    <p class="pricing-subtitle lang-en">For businesses wanting to automate lead generation</p>
+
                     <ul class="pricing-features">
-                        <li class="lang-nl">Inclusief installatieondersteuning</li>
-                        <li class="lang-en">Includes installation support</li>
+                        <li class="lang-nl"><strong>AI Chatbot</strong> met onbeperkte gesprekken</li>
+                        <li class="lang-en"><strong>AI Chatbot</strong> with unlimited conversations</li>
 
-                        <li class="lang-nl">Onbeperkte gesprekken</li>
-                        <li class="lang-en">Unlimited conversations</li>
+                        <li class="lang-nl">Lead capture & email delivery</li>
+                        <li class="lang-en">Lead capture & email delivery</li>
 
-                        <li class="lang-nl">Lead delivery naar email</li>
-                        <li class="lang-en">Lead delivery to email</li>
+                        <li class="lang-nl"><strong>Continuous support</strong> — altijd bereikbaar</li>
+                        <li class="lang-en"><strong>Continuous support</strong> — always available</li>
 
-                        <li class="lang-nl">NL/EN ondersteuning</li>
-                        <li class="lang-en">NL/EN support</li>
+                        <li class="lang-nl"><strong>Monthly updates</strong> — nieuwe features gratis</li>
+                        <li class="lang-en"><strong>Monthly updates</strong> — new features free</li>
 
-                        <li class="lang-nl">Mobiel geoptimaliseerd</li>
-                        <li class="lang-en">Mobile optimized</li>
+                        <li class="lang-nl"><strong>AI consulting</strong> — future-proofing advies</li>
+                        <li class="lang-en"><strong>AI consulting</strong> — future-proofing advice</li>
+
+                        <li class="lang-nl">Volledige installatie & setup</li>
+                        <li class="lang-en">Complete installation & setup</li>
+
+                        <li class="lang-nl">Meertalig (NL/EN + meer)</li>
+                        <li class="lang-en">Multi-language (NL/EN + more)</li>
                     </ul>
-                    <a href="https://wa.me/31629841297?text=Hallo%2C%20ik%20wil%20graag%20starten%20met%20het%20Starter%20pakket" class="pricing-cta lang-nl">Start Starter</a>
-                    <a href="https://wa.me/31629841297?text=Hello%2C%20I%20would%20like%20to%20start%20with%20the%20Starter%20package" class="pricing-cta lang-en">Start Starter</a>
+                    <a href="https://wa.me/31629841297?text=Hallo%2C%20ik%20wil%20graag%20starten%20met%20het%20Starter%20pakket" class="pricing-cta lang-nl"><span>Start Starter</span></a>
+                    <a href="https://wa.me/31629841297?text=Hello%2C%20I%20would%20like%20to%20start%20with%20the%20Starter%20package" class="pricing-cta lang-en"><span>Start Starter</span></a>
                 </div>
 
                 <div class="pricing-card featured">
+                    <div class="pricing-badge featured-badge">
+                        <span class="lang-nl">⭐ Meest gekozen</span>
+                        <span class="lang-en">⭐ Most popular</span>
+                    </div>
                     <h3>Pro</h3>
                     <div class="price">
                         €149
                         <span class="lang-nl">/maand</span>
                         <span class="lang-en">/month</span>
                     </div>
+                    <p class="pricing-subtitle lang-nl">Voor bedrijven die serious zijn over automation</p>
+                    <p class="pricing-subtitle lang-en">For businesses serious about automation</p>
+
                     <ul class="pricing-features">
-                        <li class="lang-nl">Alles van Starter</li>
-                        <li class="lang-en">Everything from Starter</li>
+                        <li class="lang-nl"><strong>Alles van Starter</strong></li>
+                        <li class="lang-en"><strong>Everything from Starter</strong></li>
 
-                        <li class="lang-nl">Make/Zapier/CRM integratie</li>
-                        <li class="lang-en">Make/Zapier/CRM integration</li>
+                        <li class="lang-nl"><strong>CRM integratie</strong> — Make/Zapier/custom</li>
+                        <li class="lang-en"><strong>CRM integration</strong> — Make/Zapier/custom</li>
 
-                        <li class="lang-nl">WhatsApp notificaties</li>
-                        <li class="lang-en">WhatsApp notifications</li>
+                        <li class="lang-nl">Real-time WhatsApp notificaties</li>
+                        <li class="lang-en">Real-time WhatsApp notifications</li>
 
-                        <li class="lang-nl">Prioriteitsondersteuning</li>
-                        <li class="lang-en">Priority support</li>
+                        <li class="lang-nl"><strong>Priority support</strong> — antwoord binnen uren</li>
+                        <li class="lang-en"><strong>Priority support</strong> — response within hours</li>
 
-                        <li class="lang-nl">Maandelijkse rapporten</li>
-                        <li class="lang-en">Monthly reports</li>
+                        <li class="lang-nl"><strong>Maandelijkse strategy calls</strong></li>
+                        <li class="lang-en"><strong>Monthly strategy calls</strong></li>
+
+                        <li class="lang-nl">Custom automation workflows</li>
+                        <li class="lang-en">Custom automation workflows</li>
+
+                        <li class="lang-nl">Geavanceerde analytics & rapporten</li>
+                        <li class="lang-en">Advanced analytics & reports</li>
+
+                        <li class="lang-nl">Appointment booking integratie</li>
+                        <li class="lang-en">Appointment booking integration</li>
                     </ul>
-                    <a href="https://wa.me/31629841297?text=Hallo%2C%20ik%20wil%20graag%20starten%20met%20het%20Pro%20pakket" class="pricing-cta lang-nl">Start Pro</a>
-                    <a href="https://wa.me/31629841297?text=Hello%2C%20I%20would%20like%20to%20start%20with%20the%20Pro%20package" class="pricing-cta lang-en">Start Pro</a>
+                    <a href="https://wa.me/31629841297?text=Hallo%2C%20ik%20wil%20graag%20starten%20met%20het%20Pro%20pakket" class="pricing-cta lang-nl"><span>Start Pro</span></a>
+                    <a href="https://wa.me/31629841297?text=Hello%2C%20I%20would%20like%20to%20start%20with%20the%20Pro%20package" class="pricing-cta lang-en"><span>Start Pro</span></a>
                 </div>
+            </div>
+
+            <div class="pricing-note">
+                <p class="lang-nl">
+                    💡 <strong>Alle pakketten</strong> bevatten continuous support, monthly updates, en AI consulting.
+                    Geen verborgen kosten. Geen extra fees. Stop wanneer je wilt.
+                </p>
+                <p class="lang-en">
+                    💡 <strong>All packages</strong> include continuous support, monthly updates, and AI consulting.
+                    No hidden costs. No extra fees. Cancel anytime.
+                </p>
             </div>
         </div>
     </section>
@@ -1054,14 +1521,27 @@
     <!-- Final CTA -->
     <section id="demo" class="final-cta">
         <div class="section-container">
-            <h2 class="lang-nl">Zie het op je website.</h2>
-            <h2 class="lang-en">See it on your website.</h2>
+            <h2 class="lang-nl">Klaar om te starten met AI-gedreven lead generation?</h2>
+            <h2 class="lang-en">Ready to start with AI-driven lead generation?</h2>
 
-            <a href="https://wa.me/31629841297?text=Hallo%2C%20ik%20wil%20graag%20een%20gesprek%20plannen%20over%20ChatMate" class="btn-primary lang-nl">Vraag een gesprek aan</a>
-            <a href="https://wa.me/31629841297?text=Hello%2C%20I%20would%20like%20to%20schedule%20a%20call%20about%20ChatMate" class="btn-primary lang-en">Request a call</a>
+            <p class="final-cta-subtitle lang-nl">
+                Praat met ons over je use case. We laten je zien hoe de chatbot werkt en
+                bespreken hoe AI & automation jouw business kunnen transformeren.
+            </p>
+            <p class="final-cta-subtitle lang-en">
+                Talk to us about your use case. We'll show you how the chatbot works and
+                discuss how AI & automation can transform your business.
+            </p>
 
-            <p class="final-cta-support lang-nl">Geen lange setup. We helpen je met installeren.</p>
-            <p class="final-cta-support lang-en">No long setup. We help you install.</p>
+            <a href="https://wa.me/31629841297?text=Hallo%2C%20ik%20wil%20graag%20een%20gesprek%20plannen%20over%20ChatMate" class="btn-primary lang-nl"><span>Plan een gesprek</span></a>
+            <a href="https://wa.me/31629841297?text=Hello%2C%20I%20would%20like%20to%20schedule%20a%20call%20about%20ChatMate" class="btn-primary lang-en"><span>Schedule a call</span></a>
+
+            <p class="final-cta-support lang-nl">
+                ✓ Geen verplichtingen • ✓ Setup in dezelfde week • ✓ Continuous support included
+            </p>
+            <p class="final-cta-support lang-en">
+                ✓ No obligations • ✓ Setup within same week • ✓ Continuous support included
+            </p>
         </div>
     </section>
 
